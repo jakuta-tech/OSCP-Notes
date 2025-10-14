@@ -171,3 +171,4 @@ Specific methods and payloads for common vulnerability classes.
 *   **[vulnerability-Checklist](https://github.com/Az0x7/vulnerability-Checklist/tree/main)**: A comprehensive checklist for various vulnerabilities.
 *   **[InsiderPhD](https://www.youtube.com/@InsiderPhD/videos)**: A YouTube channel with in-depth videos on bug hunting topics.
 *   **[Hacking APIs](https://www.amazon.com/Hacking-APIs-Application-Programming-Interfaces/dp/1718502443)**: A book focused on the security of Application Programming Interfaces.
+*   **[hackerone-reports](https://github.com/reddelexc/hackerone-reports)**: Top disclosed reports from HackerOne.
