@@ -26,14 +26,14 @@ This phase focuses on gathering information and mapping the attack surface.
     ```shell
     # Fuzz for subdomains using a wordlist
     # Rate limiting is advised to prevent network issues
-    ffuf -t 10 -c -ac -mc 200,204,301,307,401,405,400,302 -u https://FUZZ.<target domain> -H 'X-Forwarded-For: 0.0.0.0' -w <wordlist> -rate 20
+    ffuf -t 10 -rate 20 -c -ac -mc 200,204,301,307,401,405,400,302 -u https://FUZZ.<target domain> -H 'X-Forwarded-For: 0.0.0.0' -w <wordlist>
     ```
 
     *   **Fuzzing through Tor**
 
     ```shell
     # Route ffuf traffic through a SOCKS5 proxy (Tor)
-    ffuf -t 10 -c -ac -mc 200,204,301,307,401,405,400,302 -u https://FUZZ.<target domain> -H 'X-Forwarded-For: 0.0.0.0' -w <wordlist> -x socks5://127.0.0.1:9050 -rate 20
+    ffuf -t 10 -rate 20 -c -ac -mc 200,204,301,307,401,405,400,302 -u https://FUZZ.<target domain> -H 'X-Forwarded-For: 0.0.0.0' -w <wordlist> -x socks5://127.0.0.1:9050
     ```
 
 *   **BBOT**
@@ -125,7 +125,7 @@ Specific methods and payloads for common vulnerability classes.
 *   **Stealthy Fuzzing with ffuf (Browser-like Behavior)**
     *   [useragents.io](https://useragents.io/random) is a useful resource for generating random User-Agent strings.
     ```shell
-    ffuf -t 1 -rate 10 \
+    ffuf -t 10 -rate 20 \
     -mc 200,204,301,307,401,405,400,302 \
     -u https://service.xxx.com/Home/FUZZ \
     -w words_alpha.txt \
